@@ -8,10 +8,6 @@
 
 import Foundation
 
-var test = Button(Type:.inv,Factor:[Double]());
-
-print(test.Operation(Input: 103));
-
 var SAL:Solver = Solver();
 
 while (true){
