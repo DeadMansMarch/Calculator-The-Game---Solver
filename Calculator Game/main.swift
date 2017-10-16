@@ -10,6 +10,8 @@ import Foundation
 
 var SAL:Solver = Solver();
 
+Interpretor.getHelpTable();
+
 while (true){
     SAL.Solve();
 }

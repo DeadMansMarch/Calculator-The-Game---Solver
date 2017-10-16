@@ -16,6 +16,29 @@ class Interpretor{
         case multiplication,subtraction,appendation,remove,square,addition,replacement,division,flop,reverse,sum,cube,wleft,wright,mirror,F,FADD,MEMSTORE,MEMPRINT,inv;
     }
     
+    public static func getHelpTable(){
+        print("Input 'HELP' to recieve this list again.");
+        print("Buttons List:");
+        print("x=(-inf,inf)  : Number Button (x)")
+        print("     +        : Addition");
+        print("     -        : Subtraction");
+        print("     /        : division");
+        print("     x        : multiplication");
+        print("     <        : Remove");
+        print("     r        : Reverse");
+        print("     s        : Sum");
+        print("   mirror     : Mirror");
+        print("    ^2        : Square");
+        print("  inverse     : Inverse");
+        print("     w<       : Shift Left");
+        print("     w<       : Shift Right");
+        print("    ^(x)      : xth power");
+        print("    mem       : Memory -- Loads both load and store automatically.");
+        print("    +-        : Flop Sign");
+        print("   a>>b       : Replace A with B");
+        print("    [+]       : Function Mod : Add");
+    }
+    
     public static func BParse()->[Button]{
         print("Input each button present :");
         var BUTTONS = [Button]();
@@ -159,6 +182,10 @@ class Interpretor{
     
     public static func MParse()->[Double]{
         let Moves = getInput(Prompt: "Number of Moves : ");
+        if (Moves == "help"){
+            self.getHelpTable();
+            return self.MParse();
+        }
         let Goal = getInput(Prompt: "Goal : ");
         let Start = getInput(Prompt:"Start : ");
         return [Double(Moves)!,Double(Start)!,Double(Goal)!];
